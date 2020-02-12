@@ -1,0 +1,55 @@
+table.workshops-schedule {
+	font-size: 1.3rem;
+
+	td, th {
+		padding: 0.3rem 0.5rem;
+		vertical-align: top;
+	}
+	
+	th {
+		font-size: 1.5rem;
+		width: 12%;
+		text-align: center;
+	}
+	
+	th:nth-child(1) { // The location row
+		width: 13%;
+		text-align: left;
+	}
+
+	th:nth-child(4), td:nth-child(4) { // The lunch row
+		width: 3%;
+		text-align: center;
+	}
+	
+	td + td {
+		text-align: center;
+		cursor: pointer;
+		transition: 0.3s;
+
+		&:hover {
+			background-color: rgba(62, 142, 65, 0.1);
+		}
+		
+		div.workshop {
+			.title {
+				font-weight: bold;
+			}
+	
+			.instructor {
+			
+			}
+		}
+
+
+	}
+}
+
+.workshop-dialog {
+
+	
+	img {
+		float: left;
+		margin: 1rem;
+	}
+}

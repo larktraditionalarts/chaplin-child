@@ -1,0 +1,61 @@
+.lark-register-columns {
+	.wp-block-button a {
+		color: @text-primary;
+		background-color: @background-primary;
+		font-weight: bold;
+		font-size: 2rem;
+		border-radius: 0.2rem;
+	}
+
+	.wp-block-column:nth-child(1) {
+		background-color: @background-accent;
+	}
+
+	.wp-block-column:nth-child(2) {
+		background-color: @background-secondary;
+	}
+}	
+
+.lark-options-columns {
+	.wp-block-column:nth-child(1) {
+		background-color: @background-accent;
+	}
+
+	.wp-block-column:nth-child(2) {
+		background-color: @background-secondary;
+	}
+
+	.wp-block-column:nth-child(3) {
+		background-color: @background-black;
+	}
+
+	.wp-block-column:nth-child(4) {
+		background-color: @background-gray;
+	}
+}
+
+.site-logo {
+	display: none;
+}
+
+.cover-header {
+	.entry-header {
+		background-image: url(https://staging.larkcamp.org/wp-content/uploads/2019/10/LarkCamp_Logo_1000px.png);
+		background-repeat: no-repeat;
+		background-size: 100%;
+		padding-top: 75%;
+		z-index: 0;
+
+		@media (min-width: 500px) {
+			padding-top: 50%;	
+			background-size: 100%;
+		}
+
+		@media (min-width: 1000px) {
+			background-size: 50%;
+			background-position: 0 10rem;
+			padding-top: 44rem;
+		}
+	}
+}
+

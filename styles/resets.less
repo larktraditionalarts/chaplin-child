@@ -1,0 +1,33 @@
+/**
+ * Resets
+ * 
+ * These contain resets/overrides for all non-larkcamp created css classes
+ */
+
+// Menu Overrides
+.main-menu-alt-container {
+	margin: 0;
+}
+
+.main-menu-alt {
+	> li {
+		font-weight: bold;
+		font-size: 2.5rem;
+		padding: 1rem;
+		margin: 0 0 0 1.5rem;
+
+		// Inverted colors in menu
+		&.menu-button {
+			background-color: @button-text;
+			border-radius: 0.2rem;
+
+			&.register-button {
+				color: @accent;
+			}
+
+			&.donate-button {
+				color: @button-background;
+			}
+		}
+	}
+}

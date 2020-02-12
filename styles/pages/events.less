@@ -1,0 +1,39 @@
+table {
+	* {
+		border: 0;
+	}
+}
+
+table.event-schedule {
+	tr {
+		margin-bottom: 0.5rem;
+	}
+
+	td {
+		padding: 0;
+		padding-top: 0.3rem;
+    	padding-bottom: 1rem;
+    	vertical-align: top;
+	}
+
+	// Day column
+	tr > td:first-child {
+		font-weight: bold;
+		font-size: 3rem;
+		line-height: 0.9;
+    	padding-bottom: 2rem;
+	}
+
+	tr.start-of-day {
+		border-top: 1px solid @accent;
+
+		td:nth-child(1) { width: 20rem; }
+		td:nth-child(2) { width: 10rem; }
+		td:nth-child(3) { width: 20rem; }
+		td:nth-child(4) { width: auto; }
+	}
+
+	tr + tr.start-of-day {
+		border-top: 1px solid @accent;
+	}
+}

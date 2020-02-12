@@ -1,0 +1,79 @@
+.lark-what-is-columns {
+	.wp-block-column:nth-child(2) {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-content: flex-start;
+		margin-top: 8.5rem !important;
+
+		.lark-arrow-button {
+			min-height: 3em;
+		}
+	}
+}
+
+.lark-camp-theme-columns {
+	.wp-block-column {
+		color: @text-light;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.wp-block-column:not(:nth-child(1)) p {
+		margin-top: 8em
+	}
+
+	.wp-block-column:nth-child(1) {
+		background-color: @bright-accent;
+	}
+
+	.wp-block-column:nth-child(2) {
+		background-size: 50em;
+		background-image: url('/wp-content/uploads/2019/10/About_GaitaTakeoverDancingCampOne.jpg');
+	}
+
+	.wp-block-column:nth-child(3) {
+		background-size: 30em;
+		background-image: url('/wp-content/uploads/2019/10/About_SessionCampTwo.jpg');
+	}
+
+	.wp-block-column:nth-child(4) {
+		background-size: 30em;
+		background-image: url('/wp-content/uploads/2019/10/About_SessionCampThree.jpg');
+	}
+}
+
+.map-background {
+	background-image:url(https://staging.larkcamp.org/wp-content/uploads/2019/10/About_Asset-30.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% auto;
+	height: 60rem;
+	display: flex;
+	align-items: flex-end;
+	
+	& > div {
+		width: 50%;
+	}	
+}
+
+.tip-group-style {
+	border-width: 0.2rem;
+	border-color: black;
+	border-style: solid;
+	padding: 4rem;
+	
+	&.lodging-group {
+		border-color: @secondary;
+	}
+	
+	&.history-group {
+		border-color: @accent;
+	}
+}
+
+.rules-group {
+	padding: 0.5rem;
+	background-color: black;
+	color: white;
+}
