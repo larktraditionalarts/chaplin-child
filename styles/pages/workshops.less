@@ -23,8 +23,10 @@ table.workshops-schedule {
 	}
 	
 	td + td {
+		.workshop {
+			cursor: pointer;
+		}
 		text-align: center;
-		cursor: pointer;
 		transition: 0.3s;
 
 		&:hover {
@@ -40,14 +42,10 @@ table.workshops-schedule {
 			
 			}
 		}
-
-
 	}
 }
 
 .workshop-dialog {
-
-	
 	img {
 		float: left;
 		margin: 1rem;

@@ -30,6 +30,8 @@ jQuery(document).ready(function() {
 			var instructorName = lodash.get(instructor, 'title.rendered', 'TBA').replace(/"/g, "'").replace(/\n/g, '');
 			var instructorBody = lodash.get(instructor, 'content.rendered', '').replace(/"/g, "'").replace(/\n/g, '');
 			var instructorPic = lodash.get(instructor, 'pic.guid', '').replace(/(\.[a-z]+)$/i, '-150x150$1');
+			var instructorYoutube = lodash.get(instructor, 'youtube', '');
+			var instructorWebsite = lodash.get(instructor, 'website', '');
 			var workshopBody = lodash.get(w, 'content.rendered', '').replace(/"/g, "'").replace(/\n/g, '');
 			var workshopLocation = lodash.get(w, 'workshop_location[0].name', '').replace(/"/g, '\"').replace(/\n/g, '');
 			var workshopCamp = lodash.get(w, 'workshop_camp[0].name', '').replace(/"/g, "'").replace(/\n/g, '');
@@ -43,6 +45,9 @@ jQuery(document).ready(function() {
 			html += ' data-workshop-body="' + workshopBody + '"';
 			html += ' data-instructor-body="' + instructorBody + '"';
 			html += ' data-instructor-pic="' + instructorPic + '"';
+			html += ' data-instructor-youtube="' + instructorYoutube + '"';
+			html += ' data-instructor-website="' + instructorWebsite + '"';
+			html += ' data-instructor-name="' + instructorName + '"';
 
 			html += '>';
 			html += '<div class="title">' + workshopTitle + '</div>';

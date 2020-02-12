@@ -238,8 +238,10 @@ function print_workshop_schedule_func( $a )
         	            $instructor_name = $clean_attribute($workshop->field( 'workshop_instructor.post_title' ));
             	        $instructor_body = $clean_attribute($workshop->field( 'workshop_instructor.post_content' ));
                 	    $instructor_pic = pods_image_url($workshop->field( 'workshop_instructor.pic' ), 'thumbnail');
-
-						$html .= "<div class=\"workshop\" data-workshop-name='$workshop_name' data-workshop-body='$body' data-instructor-name='$instructor_name' data-instructor-body='$instructor_body' data-instructor-pic='$instructor_pic'>";
+        	            $instructor_youtube = $clean_attribute($workshop->field( 'workshop_instructor.youtube' ));
+        	            $instructor_website = $clean_attribute($workshop->field( 'workshop_instructor.website' ));
+						
+						$html .= "<div class=\"workshop\" data-workshop-name='$workshop_name' data-workshop-body='$body' data-instructor-name='$instructor_name' data-instructor-body='$instructor_body' data-instructor-pic='$instructor_pic' data-instructor-website='$instructor_website' data-instructor-youtube='$instructor_youtube'>";
 
                     	$html .= "<div class=\"title\">$workshop_name</div>";
 	                    $html .= "<div class=\"instructor\">$instructor_name</div>";
