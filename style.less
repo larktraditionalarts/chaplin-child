@@ -1,31 +1,6 @@
 @import "styles/colors";
 @import "styles/resets";
 
-// custom page overrides
-body.lta-home {
-	@import "styles/pages/home"
-}
-
-body.lta-about {
-	@import "styles/pages/about"
-}
-
-body.lta-workshops {
-	@import "styles/pages/workshops"
-}
-
-body.lta-events {
-	@import "styles/pages/events"
-}
-
-body.lta-contact {
-	@import "styles/pages/contact"
-}
-
-body.lta-workshop-search {
-	@import "styles/pages/workshop-search.less"
-}
-
 // Custom style overrides for all pages
 #site-header {
 	.main-menu-alt > li {
@@ -55,51 +30,123 @@ body.lta-workshop-search {
 	}
 }
 
+#site-content {
+	div.lta-color-columns {
+		color: @light;
 
-hr {
-	margin: 1rem;
-}
+		.wp-block-button a {
+			color: @text-primary;
+			background-color: @background-primary;
+			font-weight: bold;
+			font-size: 2rem;
+			border-radius: 0.2rem;
+		}
+		
+		&.has-2-columns {
+			.wp-block-column:nth-child(1) {
+				background-color: @background-accent;
+			}
 
-.lark-options-columns .wp-block-column, .lark-register-columns .wp-block-column {
-	color: @column-text;
-	flex-basis: 100%;
-}
+			.wp-block-column:nth-child(2) {
+				background-color: @background-secondary;
+			}
+		}
 
-div.wp-block-column {
-	margin-bottom: 0 !important;
-	margin-left: 0 !important;
-	margin-top: 0 !important;
-	margin-right: 0 !important;
-	padding: 2rem;
-}
+		
+		&.has-4-columns {
+			.wp-block-column:nth-child(1) {
+				background-color: @background-accent;
+			}
 
-.lark-arrow-button {
-	flex-basis: 50%;
-	font-size: 3rem;
-	align-items: baseline;
-	margin-bottom: 0 !important;
-	margin-top: 0 !important;
-	max-height: 2em;
+			.wp-block-column:nth-child(2) {
+				background-color: @background-secondary;
+			}
 
-	a {
-		background-color: transparent;
-		text-align: left;
-		padding: 0.2em 0.2em 0.2em 4rem;
-		background-repeat: no-repeat;
-		background-position: 0rem 0.5rem;
-		background-size: 1.2em
+			.wp-block-column:nth-child(3) {
+				background-color: @background-black;
+			}
+
+			.wp-block-column:nth-child(4) {
+				background-color: @background-gray;
+			}
+		}
 	}
 	
-	&.lark-arrow-button-orange a {
-		color: #e0a950;
-		background-image: url('/wp-content/uploads/2019/10/ARROW_sm_gold.png');
-	}
-	
-	&.lark-arrow-button-gray a {
-		color: gray;
-		background-image: url('/wp-content/uploads/2019/10/ARROW_sm_grey.png');
+	.no-bottom-margin {
+		margin-bottom: 0;
 	}
 
+	hr {
+		margin: 1rem;
+	}
+
+	.lark-options-columns .wp-block-column, .lark-register-columns .wp-block-column {
+		color: @column-text;
+		flex-basis: 100%;
+	}
+
+	div.wp-block-column {
+		margin-bottom: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		margin-right: 0 !important;
+		padding: 2rem;
+	}
+
+	.lark-arrow-button {
+		flex-basis: 50%;
+		font-size: 3rem;
+		align-items: baseline;
+		margin-bottom: 0 !important;
+		margin-top: 0 !important;
+		max-height: 2em;
+
+		a {
+			background-color: transparent;
+			text-align: left;
+			padding: 0.2em 0.2em 0.2em 4rem;
+			background-repeat: no-repeat;
+			background-position: 0rem 0.5rem;
+			background-size: 1.2em
+		}
+
+		&.lark-arrow-button-orange a {
+			color: #e0a950;
+			background-image: url('/wp-content/uploads/2019/10/ARROW_sm_gold.png');
+		}
+
+		&.lark-arrow-button-gray a {
+			color: gray;
+			background-image: url('/wp-content/uploads/2019/10/ARROW_sm_grey.png');
+		}
+
+	}
 }
+
 
 .theme-credits { display: none; }
+
+// custom page overrides
+body.lta-home {
+	@import "styles/pages/home"
+}
+
+body.lta-about {
+	@import "styles/pages/about"
+}
+
+body.lta-workshops {
+	@import "styles/pages/workshops"
+}
+
+body.lta-events {
+	@import "styles/pages/events"
+}
+
+body.lta-contact {
+	@import "styles/pages/contact"
+}
+
+body.lta-workshop-search {
+	@import "styles/pages/workshop-search.less"
+}
