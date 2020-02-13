@@ -118,7 +118,7 @@ body.page-template-template-full-width #site-header {
 			background-size: 1.2em
 		}
 
-		&.lark-arrow-button-orange a {
+		&.lark-arrow-button-orange {
 			color: #e0a950;
 			background-image: url('/wp-content/uploads/2019/10/ARROW_sm_gold.png');
 		}
@@ -131,6 +131,51 @@ body.page-template-template-full-width #site-header {
 	}
 }
 
+// table of contents styling
+.lwptoc {
+	margin-top: 0 !important;
+	
+	.lwptoc_i {
+		padding-top: 0;	
+	}
+
+	.lwptoc_itemWrap {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	div.lwptoc_item {
+		// alignment and padding
+		// flex-basis: 50%;
+		align-items: baseline;
+		margin-bottom: 0 !important;
+    	line-height: 1;
+		padding-left: 3rem;
+   		padding-bottom: 2rem;
+
+		// font
+		font-size: 2.5rem;
+		font-weight: 500;
+
+		// background arrow
+		background-image: url('/wp-content/uploads/2019/10/ARROW_sm_gold.png');
+		background-repeat: no-repeat;
+		background-size: 1em;
+    	background-position: 0 0.2rem;
+
+
+		a {
+			color: #e0a950;
+			background-color: transparent;
+			text-align: left;
+			text-decoration: none;
+		}
+	}
+	
+	div.lwptoc_item:first-child {
+		display: none;
+	}
+}
 
 .theme-credits { display: none; }
 
