@@ -15,6 +15,14 @@ function bindWorkshopsClickHandlers() {
 			+ '<img src="' + $el.data('instructor-pic') + '" />'
 			+ $el.data('instructor-body');
 
+		if ($el.data('instructor-media1')) {
+			html += '<audio controls><source src="'+ $el.data('instructor-media1') +'" type="audio/mpeg"></audio>';
+		}
+
+		if ($el.data('instructor-media2')) {
+			html += '<audio controls><source src="'+ $el.data('instructor-media2') +'" type="audio/mpeg"></audio>';
+		}
+
 		if ($el.data('instructor-website')) {
 			html += '<div class="wp-block-button"><a class="wp-block-button__link" href="'+ $el.data('instructor-website') +'">Website</a></div>';
 		}

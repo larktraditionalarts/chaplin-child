@@ -240,8 +240,11 @@ function print_workshop_schedule_func( $a )
                 	    $instructor_pic = pods_image_url($workshop->field( 'workshop_instructor.pic' ), 'thumbnail');
         	            $instructor_youtube = $clean_attribute($workshop->field( 'workshop_instructor.youtube' ));
         	            $instructor_website = $clean_attribute($workshop->field( 'workshop_instructor.website' ));
+						$instructor_media1 = pods_image_url($workshop->field( 'workshop_instructor.media_1' ), null);
+						$instructor_media2 = pods_image_url($workshop->field( 'workshop_instructor.media_2' ), null);
+
 						
-						$html .= "<div class=\"workshop\" data-workshop-name='$workshop_name' data-workshop-body='$body' data-instructor-name='$instructor_name' data-instructor-body='$instructor_body' data-instructor-pic='$instructor_pic' data-instructor-website='$instructor_website' data-instructor-youtube='$instructor_youtube'>";
+						$html .= "<div class=\"workshop\" data-workshop-name='$workshop_name' data-workshop-body='$body' data-instructor-name='$instructor_name' data-instructor-body='$instructor_body' data-instructor-pic='$instructor_pic' data-instructor-website='$instructor_website' data-instructor-youtube='$instructor_youtube' data-instructor-media1='$instructor_media1' data-instructor-media2='$instructor_media2'>";
 
                     	$html .= "<div class=\"title\">$workshop_name</div>";
 	                    $html .= "<div class=\"instructor\">$instructor_name</div>";
