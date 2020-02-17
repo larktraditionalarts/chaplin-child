@@ -210,7 +210,7 @@ function print_workshop_schedule_func( $a )
             $period_row .= "<th><div>Period $period</div><div>$period_time</div></th>";
 
             if ($period == $lunch_after) {
-                $period_row .= "<th>🍽</th>";
+                // $period_row .= "<th class=\"lunch\"></th>";
             };
         }
 
@@ -220,8 +220,13 @@ function print_workshop_schedule_func( $a )
             'limit' => -1,
         ]);
 
-        $row_span = $period_count + 2;
-        $html .= "<tr><th colspan=\"$row_span\">&nbsp;</th></tr>";
+        $row_remainder_span = $period_count + 1 - 4;
+        $html .= "<thead><tr>";
+		$html .= "<th colspan=\"2\">&nbsp;</th>";
+		$html .= "<th colspan=\"2\" class=\"lunch\">Lunch (11:45 - 12:30)</th>";
+		$html .= "<th colspan=\"$row_remainder_span\">&nbsp;</th>";
+		$html .= "</tr></thead>";
+		$html .= "<tbody>";
         $html .= '<tr>' . $period_row . '</tr>';
 
         while ( $workshop_location->fetch() ) {
@@ -272,14 +277,14 @@ function print_workshop_schedule_func( $a )
                     $html .= "<td>&nbsp;</td>";
                 }
 
-                if ($period == $lunch_after) $html .= "<td>🍽</td>";
+                // if ($period == $lunch_after) $html .= "<td class=\"lunch\"></td>";
 
             }
 
             $html .= "</tr>\n";
         }
     }
-
+	$html .= "</tbody>";
     $html .= '</table>';
 
     // return the html

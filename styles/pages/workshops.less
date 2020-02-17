@@ -1,50 +1,70 @@
 table.workshops-schedule {
 	font-size: 1.3rem;
-
 	td, th {
 		padding: 0.3rem 0.5rem;
 		vertical-align: top;
 	}
-	
+
 	th {
 		font-size: 1.5rem;
 		width: 12%;
 		text-align: center;
-		div:nth-child(2) {
+	}
+
+	tbody {
+		th div:nth-child(2) {
 			font-weight: normal;
 			font-size: 1.2rem;
 		}
-	}
-	
-	th:nth-child(1) { // The location row
-		width: 13%;
-		text-align: left;
-	}
 
-	th:nth-child(4), td:nth-child(4) { // The lunch row
-		width: 3%;
-		text-align: center;
-	}
-	
-	td + td {
-		.workshop {
-			cursor: pointer;
+		th:nth-child(1) { // The location row
+			width: 13%;
+			text-align: left;
 		}
-		text-align: center;
-		transition: 0.3s;
 
-		&:hover {
-			background-color: rgba(62, 142, 65, 0.1);
+		td + td {
+			.workshop {
+				cursor: pointer;
+			}
+			text-align: center;
+			transition: 0.3s;
+
+			&:hover {
+				background-color: rgba(62, 142, 65, 0.1);
+			}
+
+			div.workshop {
+				.title {
+					font-weight: bold;
+				}
+
+				.instructor {
+
+				}
+			}
 		}
 		
-		div.workshop {
-			.title {
-				font-weight: bold;
-			}
-	
-			.instructor {
-			
-			}
+		// before lunch
+		td:nth-child(3), th:nth-child(3) {
+			border-right-color: @gold;
+			border-right-width: medium;
+		}
+
+		// after lunch
+		td:nth-child(4), th:nth-child(4) {
+			border-left-width: medium;
+			border-left-color: @gold;
+		}
+	}
+
+	thead {
+		th {
+			border-width: 0;
+		}
+		
+		th.lunch { // The lunch row
+			border-color: @gold;
+    		border-width: medium;
 		}
 	}
 }
