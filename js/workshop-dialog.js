@@ -34,15 +34,21 @@ function bindWorkshopsClickHandlers() {
 		html += '</div>';
 
 		var $dialog = $(html).dialog({
-			autoOpen  : true,
-			modal     : true,
-			title     : $el.data('workshop-name'),
+			autoOpen: true,
+			closeOnEscape: true,
+			modal: true,
+			title: $el.data('workshop-name'),
 			buttons: [],
 			minWidth: Math.min(1000, $(window).width() * 0.8),
 			maxHeight: $(window).height() * 0.8,
 			close: function( event, ui ) {
 				$dialog.dialog('destroy');
 			},
+			open: function(event, ui) {
+				$('.ui-widget-overlay').bind('click', function() {
+					$dialog.dialog('close');
+				});
+			}
 		});
 	});
 }
