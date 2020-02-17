@@ -189,13 +189,25 @@ function print_workshop_schedule_func( $a )
     $lunch_after = 2;
 
     $html = '<table class="workshops-schedule">' . "\n";
+	
+	$period_times = [
+		1 => '9:30-10:30',
+		2 => '10:45-11:45',
+		3 => '12:30-1:30',
+		4 => '1:45-2:45',
+		5 => '3:00-4:00',
+		6 => '4:15-5:15',
+		7 => '5:30-6:30',
+		8 => 'time',
+	];
 
     for ($camp = 1; $camp <= $camp_count; $camp++) {
 
         $period_row = "<th>Camp $camp</th>";
 
         for($period = 1; $period <= $period_count; $period++) {
-            $period_row .= "<th>Period $period</th>";
+			$period_time = $period_times[$period];
+            $period_row .= "<th><div>Period $period</div><div>$period_time</div></th>";
 
             if ($period == $lunch_after) {
                 $period_row .= "<th>🍽</th>";
