@@ -48,6 +48,10 @@ function bindWorkshopsClickHandlers() {
 				$('.ui-widget-overlay').bind('click', function() {
 					$dialog.dialog('close');
 				});
+
+				$('*').blur();
+				$('.ui-dialog-content').scrollTop(0);
+
 			}
 		});
 	});
