@@ -24,11 +24,11 @@ function bindWorkshopsClickHandlers() {
 		}
 
 		if ($el.data('instructor-website')) {
-			html += '<div class="wp-block-button"><a class="wp-block-button__link" href="'+ $el.data('instructor-website') +'">Website</a></div>';
+			html += '<div class="wp-block-button"><a class="wp-block-button__link" target="_blank" href="'+ $el.data('instructor-website') +'">Website</a></div>';
 		}
 
 		if ($el.data('instructor-youtube')) {
-			html += '<div class="wp-block-button"><a class="wp-block-button__link" href="'+ $el.data('instructor-youtube') +'">Youtube</a></div>';
+			html += '<div class="wp-block-button"><a class="wp-block-button__link" target="_blank" href="'+ $el.data('instructor-youtube') +'">Youtube</a></div>';
 		}
 
 		html += '</div>';
