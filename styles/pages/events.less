@@ -5,6 +5,8 @@ table {
 }
 
 table.event-schedule {
+	white-space: nowrap;
+
 	tr {
 		margin-bottom: 0.5rem;
 	}
@@ -13,31 +15,55 @@ table.event-schedule {
 		padding: 0;
 		padding-top: 0.3rem;
     	padding-bottom: 1rem;
+    	padding-left: 1rem;
     	vertical-align: top;
-		font-size: 1rem;
+		font-size: 1.2rem;
+
 		@media (min-width: 650px) {
 			font-size: inherit;
 		}
 	}
+	
+	td:nth-child(2) {
+		display: flex;
+		flex-direction: column-reverse;
+
+		@media (min-width: 650px) {
+			flex-direction: row;
+			flex-wrap: nowrap;
+		}
+		
+		div:nth-child(1) {
+			padding-right: 0.2rem;
+			min-width: 8rem;
+		}
+
+		div:nth-child(2) {
+			min-width: 100%;
+		}
+	}
+	
+	td:nth-child(3) {
+		white-space: normal;
+	}
+
 
 	tr.start-of-day {
 		border-top: 1px solid @accent;
 
 		td:nth-child(1) {
-			width: 7rem;
-			@media (min-width: 650px) { width: 20rem; }
-		}
-		td:nth-child(2) {
-			width: 5rem;
-			@media (min-width: 650px) { width: 10rem; }
-		}
-		td:nth-child(3) {
 			width: 10rem;
 			@media (min-width: 650px) { width: 20rem; }
 		}
-		td:nth-child(4) {
-			width: auto;
-			@media (min-width: 650px) { width: auto; }
+		td:nth-child(2) {
+			width: 10rem;
+			@media (min-width: 650px) { width: 25rem; }
+
+		}
+		td:nth-child(3) {
+			width: 100%;
+
+			@media (min-width: 650px) {}
 		}
 
 	}
@@ -45,9 +71,10 @@ table.event-schedule {
 	// Day column
 	tr > td:first-child {
 		font-weight: bold;
-		font-size: 1rem;
+		font-size: 1.5rem;
 		line-height: 0.9;
 		padding-bottom: 2rem;	
+		padding-left: 1rem;	
 
 		@media (min-width: 650px) {
 			font-weight: bold;

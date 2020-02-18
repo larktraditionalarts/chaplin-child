@@ -113,7 +113,7 @@ function print_evening_schedule_func( $a )
 	// sort by day, time start
 	// Get the Pods object and run find()
 	$params = array(
-		'orderby' => 'event_day.meta_value ASC, event_start.meta_value DESC',
+		'orderby' => 'event_day.meta_value ASC, event_start.meta_value ASC',
 		'where' => 'event_camp.name = "Camp ' . $atts['camp'] . '"',
 		'limit' => -1,
     );
@@ -148,8 +148,10 @@ function print_evening_schedule_func( $a )
 
 		$html .= "<tr$row_props>";
 		$html .= '<td>' . $day_to_display . '</td>';
-		$html .= '<td>' . $events->display( 'event_start' ) . '</td>';
-		$html .= '<td>' . $location . '</td>';
+		$html .= '<td>';
+		$html .= '<div>' . $events->display( 'event_start' ) . '</div>';
+		$html .= '<div>' . $location . '</div>';
+		$html .= '</td>';
 		$html .= '<td>' . $events->display( 'title' ) . '</td>';
 		
 		$html .= "</tr>\n";
