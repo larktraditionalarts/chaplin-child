@@ -12,14 +12,28 @@ table.workshops-schedule {
 	}
 
 	tbody {
+		th {
+			color: white;
+			background-color: black;
+		}
+
 		th div:nth-child(2) {
 			font-weight: normal;
 			font-size: 1.2rem;
 		}
 
-		th:nth-child(1) { // The location row
-			width: 13%;
+		th:nth-child(1), td:nth-child(1) { // The location row
+			width: 17%;
 			text-align: left;
+			font-weight: bold;
+		}
+
+		tr:nth-child(even) { background-color: rgba(0,0,0,0.04); }
+
+		td {
+			border-width: 0;
+			border-right-width: 1px;
+			border-left-width: 1px;
 		}
 
 		td + td {
@@ -37,22 +51,18 @@ table.workshops-schedule {
 				.title {
 					font-weight: bold;
 				}
-
-				.instructor {
-
-				}
 			}
 		}
-		
+
 		// before lunch
 		td:nth-child(3), th:nth-child(3) {
 			border-right-color: @gold;
-			border-right-width: medium;
+			border-right-width: thick;
 		}
 
 		// after lunch
 		td:nth-child(4), th:nth-child(4) {
-			border-left-width: medium;
+			border-left-width: thick;
 			border-left-color: @gold;
 		}
 	}
@@ -61,10 +71,11 @@ table.workshops-schedule {
 		th {
 			border-width: 0;
 		}
-		
+
 		th.lunch { // The lunch row
+			color: @gold;
 			border-color: @gold;
-    		border-width: medium;
+    		border-width: 2px;
 		}
 	}
 }
