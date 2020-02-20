@@ -94,9 +94,9 @@ jQuery(document).ready(function() {
 		window.data[category][value] = label;
 	});
 
-	jQuery('.lta-workshop-content').on('change', 'input', function() {		
+	jQuery('.lta-workshop-content').on('change', 'input', function() {
 		var filteredWorkshops = window.data.workshops.slice();
-		
+
 		$('.lta-workshop-content .collapseomatic ~ .collapseomatic_content ').each(function() {
 			var valuesToFilter = lodash.map(
 				$(this).find('input:checked'),
@@ -106,11 +106,11 @@ jQuery(document).ready(function() {
 					return [vals[1], vals[2]];
 				}
 			);
-			
+
 			// console.log('valuesToFilter', valuesToFilter);
-			
+
 			if (!valuesToFilter.length) return;
-			
+
 			filteredWorkshops = lodash.filter(
 				filteredWorkshops,
 				function (w) {
@@ -118,17 +118,17 @@ jQuery(document).ready(function() {
 						var category = v[0];
 						var value = v[1];
 						var workshopValue = find(w, category, false);
+						// console.log({ category, value, workshopValue });
 
 						if (!workshopValue) return false;
-						if (!jQuery.isArray(workshopValue)) return value === workshopValue;
-						// console.log({ category, value, workshopValue });
+						if (!jQuery.isArray(workshopValue)) return value == workshopValue;
 
 						return lodash.filter(workshopValue, function (o) { return o == value; }).length > 0;
 					}).length > 0;
 				}
 			);
 		});
-		
+
 		renderWorkshops(filteredWorkshops);
 	});
 
