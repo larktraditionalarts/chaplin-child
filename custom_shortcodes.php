@@ -225,7 +225,7 @@ function print_workshop_schedule_func( $a )
         $row_remainder_span = $period_count + 1 - 4;
         $html .= "<thead><tr>";
 		$html .= "<th colspan=\"2\">&nbsp;</th>";
-		$html .= "<th colspan=\"2\" class=\"lunch\">Lunch (11:45 - 12:30)</th>";
+		$html .= "<th colspan=\"2\" class=\"lunch\">No workshops (11:45 - 12:30)</th>";
 		$html .= "<th colspan=\"$row_remainder_span\">&nbsp;</th>";
 		$html .= "</tr></thead>";
 		$html .= "<tbody>";
