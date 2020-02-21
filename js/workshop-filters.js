@@ -94,7 +94,7 @@ jQuery(document).ready(function() {
 		window.data[category][value] = label;
 	});
 
-	jQuery('.lta-workshop-content').on('change', 'input', function() {
+	jQuery('.lta-workshop-content').on('change input', 'input', function() {
 		var filteredWorkshops = window.data.workshops.slice();
 
 		$('.lta-workshop-content .collapseomatic ~ .collapseomatic_content ').each(function() {
@@ -128,6 +128,27 @@ jQuery(document).ready(function() {
 				}
 			);
 		});
+
+		// <input type="text" class="workshop-text-search" placeholder="search" />
+		var textSearch = $('.lta-workshop-content .workshop-text-search').val();
+
+		if (textSearch) {
+			filteredWorkshops = lodash.filter(filteredWorkshops, function (w) {
+				var instructor = window.data.instructors[w.workshop_instructor];
+
+				var haystack = (
+					lodash.get(instructor, 'title.rendered', '') + // instructor name
+					// lodash.get(instructor, 'content.rendered', '') + // instructor description
+					lodash.get(w, 'content.rendered', '') + // workshop content
+					find(w, 'title', '') // workshop title
+				).replace(/[^\w\s]/g, '').toLowerCase();
+				
+				var needle = textSearch.replace(/[^\w\s]/g, '').toLowerCase();
+				console.log('needle', needle, 'haystack', haystack);
+
+				return haystack.indexOf(needle) >= 0;
+			});
+		}
 
 		renderWorkshops(filteredWorkshops);
 	});

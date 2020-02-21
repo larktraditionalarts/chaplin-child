@@ -5,7 +5,7 @@ jQuery(document).ready(function() {
 function bindWorkshopsClickHandlers() {
 	jQuery('.workshops-schedule').on('click', '.workshop', function() {
 		var $el = jQuery(this);
-		console.log('clicked on ' + $el.data('workshop-name'));
+		// console.log('clicked on ' + $el.data('workshop-name'));
 
 		if (!$el.data('workshop-name')) return;
 
