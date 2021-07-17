@@ -32,9 +32,9 @@ if ( ! is_page_template( $only_content_templates ) || $show_footer ) : ?>
 
             <p class="footer-copyright">&copy; <?php echo esc_html( date_i18n( __( 'Y', 'chaplin' ) ) ); ?> <a target="_blank" href="https://larktraditionalarts.org">Lark Traditional Arts</a></p>
 
-            <p class="footer-terms"><a href="">Terms of Registration</a></p>
+            <p class="footer-terms"><a href="/terms/">Terms of Registration</a></p>
 
-            <p class="footer-coc"><a href="">Code of Conduct</a></p>
+            <p class="footer-coc"><a href="/code-of-conduct/">Code of Conduct</a></p>
 
             <ul class="footer-social social-menu">
                 <?php

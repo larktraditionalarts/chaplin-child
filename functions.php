@@ -3,6 +3,7 @@
 require_once('shortcodes/checkfilter.php');
 require_once('shortcodes/print_evening_schedule.php');
 require_once('shortcodes/print_workshop_schedule.php');
+require_once('functions/woocommerce.php');
 
 // styles
 require_once('functions/enqueue_base_styles.php');
@@ -35,3 +36,11 @@ function lta_specific_page_js()
 }
 
 add_action('wp_enqueue_scripts', 'lta_specific_page_js');
+
+/**
+* Removes or edits the 'Protected:' part from posts titles
+*/
+add_filter( 'protected_title_format', 'remove_protected_text' );
+function remove_protected_text() {
+	return __('%s');
+}
