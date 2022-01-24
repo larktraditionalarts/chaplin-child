@@ -73,7 +73,7 @@ function lta_print_workshop_schedule_func( $a )
 
             $id = $workshop_location->id();
             $workshop = pods('workshop', [
-                'orderby' => 'workshop_period.meta_value ASC',
+                'orderby' => 'workshop_period ASC',
                 'where'   => "workshop_location.term_id = $location_id",
                 'limit' => -1,
             ]);
@@ -81,7 +81,7 @@ function lta_print_workshop_schedule_func( $a )
             $html .= "<tr><td>$location_name</td>";
 
             $workshop->fetch();
-            $workshop_period = $format_period($workshop->field('workshop_period.meta_value'), 0);
+            $workshop_period = $format_period($workshop->field('workshop_period'), 0);
 
             for($period = 1; $period <= $period_count; $period++) {
                 if ($workshop_period == $period) {
@@ -106,7 +106,7 @@ function lta_print_workshop_schedule_func( $a )
                         $html .= "</div>";
 
                         $workshop->fetch();
-                        $workshop_period = $format_period($workshop->field('workshop_period.meta_value'), $workshop_period);
+                        $workshop_period = $format_period($workshop->field('workshop_period'), $workshop_period);
                         if ($workshop_period == $period) $html .= "<hr />";
                     }
 
